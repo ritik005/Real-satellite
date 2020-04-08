@@ -1,0 +1,22 @@
+{
+  "name": "realsatellite",
+  "version": "1.0.0",
+  "description": "A Business website for investors and ideators to collaborate",
+  "main": "index.js",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-flash": "^0.1.1",
+    "ejs": "^3.0.2",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.7",
+    "node": "^13.12.0",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Ritik Varshney",
+  "license": "ISC"
+}
