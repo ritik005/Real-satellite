@@ -1,10 +1,12 @@
 const express = require('express');
 const path = require('path');
-var EJS  = require('ejs');
-var methodOverride = require('method-override');
-var session = require('express-session');
+const EJS  = require('ejs');
+const methodOverride = require('method-override');
+const session = require('express-session');
+const flash = require('connect-flash');
 const bodyParser = require('body-parser');
-var mongoose = require('mongoose');
+const passport = require('passport');
+const mongoose = require('mongoose');
 
 
 require('./config/dbconnection');
@@ -13,6 +15,9 @@ const app = express();
 
 var users = require('./routes/users');
 var ideas = require('./routes/ideas');
+
+// passport config
+require('./config/passport')(passport);
 
 require('./models/User');
 const User = mongoose.model('users');
@@ -45,6 +50,21 @@ app.use(session({
     resave: true,
     saveUninitialized: true,
 }));
+
+//passport middleware
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use(flash());
+
+//global variables
+app.use(function(req,res,next){
+    res.locals.success_msg = req.flash('success_msg');
+    res.locals.error_msg = req.flash('error_msg');
+    res.locals.error = req.flash('error');
+    res.locals.user = req.user || null;
+    next();
+});
 
 // Basic routing
 
