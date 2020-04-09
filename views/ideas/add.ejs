@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Add Ideas</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+</head>
+<header>
+    <%- include('../layout/main'); %>
+</header>
+<body>
+        <div class="container" style="margin-top:30px">
+            <div class="row">
+              <div class="col-sm-3">
+                <h2>Profile</h2>
+                    <div class="card" style="width:200px">
+                        <img class="card-img-top" src="/img/img1.jpeg" alt="Card image">
+                    </div>
+                <br>
+                <h4><b>Ritik Varshney</b> </h4>
+                <br>
+                    <div class="container">
+                        <input type="button" class="btn btn-dark" value="Edit Profile">
+                    </div>
+                <hr class="d-sm-none">
+                    </div>
+                    <div class="col-sm-9">
+                        <h3><b>Add your ideas</b></h3>
+                        <p>Your idea may contains all document files, source code or any abstract or URL.
+                        <a href="#">Import Idea</a></p>
+                        <hr>
+                        <form method="post" action="/ideas">
+                        <div class="form-group">
+                        <label for="title"><b>Title</b></label>
+                        <input type="text" class="form-control" name="title" placeholder="..." required>
+                        <small id="emailHelp" class="form-text text-muted">Make sure your idea name should not contain more then 1 or 2 words.</small>
+                      </div>
+                      <div class="form-group">
+                        <label for="title"><b>Details</b></label>
+                        <textarea class="form-control" name="details" required ></textarea>
+                        <small id="emailHelp" class="form-text text-muted">Give a brief description about your idea around 50 to 100 words.</small>
+                      </div>
+                    <hr>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                          <input type="radio" class="form-check-input" name="optradio"> <i class="fa fa-lock" aria-hidden="true"></i> <b> Private</b><br>
+                          <small>You choose who can see your project idea.</small>
+                        </label>
+                      </div>
+                      <div class="form-check">
+                          <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="optradio"><i class="fa fa-unlock" aria-hidden="true"></i> <b>  Public</b><br>
+                            <small>Anyone can see your project idea and also contribute openly.</small>
+                          </label>
+                        </div>
+                        <hr>
+                <button type="submit" class="btn btn-dark mr-5">Add</button>
+              </form>
+              </div>
+            </div>
+          </div>
+</body>
+</html>

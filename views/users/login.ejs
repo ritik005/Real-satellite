@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Login page</title>
+  </head>
+  <header>
+    <%- include('../layout/main'); %>
+  </header>
+  <body class="text-center">
+      <div class="container">
+    <form class="form-signin" method="post" action="/users/login">
+      <h1 class="h3 mb-3 font-weight-high">Account Login</h1>
+      <label for="inputEmail" class="sr-only">Email address</label>
+      <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+      <label for="inputPassword" class="sr-only">Password</label>
+      <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+      </div>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    </form>
+    <p>Don't have an account? <a href="/users/register">Click here</a></p>
+    </div>
+  </body>
+</html>
+

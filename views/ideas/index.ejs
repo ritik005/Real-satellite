@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Ideator section</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+</head>
+<header>
+    <%- include('../layout/main'); %>
+</header>
+<body>
+    <style>
+      .james {
+        width:100%;
+        padding:0px;
+      }
+    </style>
+      <div class="container" style="margin-top:30px">
+        <div class="row">
+          <div class="col-sm-3">
+            <h2>Profile</h2> 
+            <div class="card" style="width:200px" >
+              <img class="logo2" src="/img/img1.jpeg" alt="Card image">
+            </div>
+            <br>
+            <h4><b>Ritik Varshney</b> </h4>
+                <br>
+            <div class="container">
+                <input type="button" class="btn btn-dark" value="Edit Profile">
+            </div>
+            <hr class="d-sm-none">
+            </div>
+            <div class="col-sm-9">
+                <button type="button" class="btn btn-light mr-4">Projects <span style="border-radius: 10%;background: #F4B400; font-weight: 700; color: #ffffff; padding: 4px;">7</span></button>
+                <button type="button" class="btn btn-light mr-4">Connections <span style="border-radius: 10%;background: #4285F4; font-weight: 700; color: #ffffff; padding: 4px;">4</span></button>
+                <button type="button" class="btn btn-light mr-4">Proposals <span style="border-radius: 10%;background: #0F9D58; font-weight: 700; color: #ffffff; padding: 4px;">3 </span></button>
+                <hr>
+                <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-4" type="search" placeholder="Find your Project..." aria-label="Search">
+                <button class="btn btn-outline-dark mr-4" type="submit">Search</button>
+                <button class="btn btn-outline-dark my-2 my-sm-2 link-unstyled" type="submit"><a href="/ideas/add" class="text-dark">New</a></button>
+                </form>
+                <hr>
+          </div>
+        </div>
+      </div>
+</body>
+</html>
