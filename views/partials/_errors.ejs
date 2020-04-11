@@ -1,5 +1,4 @@
-<% if('errors') { %>
-    <div class="alert alert-danger"><% errors.foreach(function(errors){ %> </div>
-      <%= errors.msg %>
-   <% }) %>
+<% if(errors) { %>
+    <div class="alert alert-danger"><%= errors %>
+    </div>
 <%}%>
