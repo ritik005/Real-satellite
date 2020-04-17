@@ -4,8 +4,6 @@ var bcrypt = require('bcryptjs');
 
 // load user model
 require('../models/Investor');
-require('../models/User');
-const User = mongoose.model('users');
 const Investor = mongoose.model('investor');
 
 module.exports = function(passport){
@@ -14,17 +12,17 @@ module.exports = function(passport){
         passwordField: 'password'
     }, (username, password, done) => {
         //match user
-        User.findOne({
+        Investor.findOne({
             email: username
-        }).then(user => {
-            if(!user){
+        }).then(investor => {
+            if(!investor){
                 return done(null, false, {message: 'No user Found'});
             } 
             // match password
-            bcrypt.compare(password, user.password, (err, isMatch) => {
+            bcrypt.compare(password, investor.password, (err, isMatch) => {
                 if(err) throw err;
                 if(isMatch){
-                     return done(null, user);
+                     return done(null, investor);
                 } else {
                     return done(null, false, {message: 'Password incorrect'});
                 }
@@ -32,13 +30,13 @@ module.exports = function(passport){
         })
     }));
 
-    passport.serializeUser(function(user, done) {
-        done(null, user.id);
+    passport.serializeUser(function(investor, done) {
+        done(null, investor.id);
     });
 
     passport.deserializeUser(function(id, done){
-        User.findById(id, function(err, user) {
-            done(err, user);
+        Investor.findById(id, function(err, user) {
+            done(err, investor);
         });
     });
 }

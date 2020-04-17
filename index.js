@@ -19,9 +19,12 @@ var investor = require('./routes/investor');
 
 // passport config
 require('./config/passport')(passport);
+require('./config/passport1')(passport);
 
 require('./models/User');
 const User = mongoose.model('users');
+require('./models/Investor');
+const Investor = mongoose.model('investor');
 require('./models/Idea');
 const Idea = mongoose.model('ideas');
 
