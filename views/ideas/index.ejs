@@ -25,7 +25,7 @@
               <img class="logo2" src="/img/img1.jpeg" alt="Card image">
             </div>
             <br>
-            <h4><b>Ritik Varshney</b> </h4>
+            <h4><b><%= user.name %></b> </h4>
                 <br>
             <div class="container">
                 <input type="button" class="btn btn-dark" value="Edit Profile">
@@ -44,16 +44,16 @@
                 </form>
                 <hr>
                 <% ideas.forEach(function(ideas){ %>
-                  <div class="card card-body mb-2">
-                    <h4><%= ideas.title %></h4>
-                    <p><%= ideas.details %></p>
-                    <a class="btn btn-dark btn-block mb-2" href="/ideas/edit/<%=ideas.id%>">Edit</a>
+                  <div class="card card-body mb-2" style="background-color: rgb(241, 247, 247);">
+                    <h4 class="sss"><%= ideas.title %></h4>
+                    <p style="color:black;font-weight: 400; font-size: 18px;"><%= ideas.details %></p>
+                    <a class="gta-btn btn-dark mb-2 " href="/ideas/edit/<%=ideas.id%>">Edit</a>
                     <form method="post" action="/ideas/<%= ideas.id %>?_method=DELETE">
                        <input type="hidden" name="_method" value="DELETE">
-                       <input type="submit" class="btn btn-danger btn-block" value="Delete">
+                       <input type="submit" class="fta-btn btn-danger" value="Delete">
                     </form>
                   </div>
-               <% }) %>
+                  <% }) %>
           </div>
         </div>
       </div>

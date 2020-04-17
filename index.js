@@ -15,6 +15,7 @@ const app = express();
 
 var users = require('./routes/users');
 var ideas = require('./routes/ideas');
+var investor = require('./routes/investor');
 
 // passport config
 require('./config/passport')(passport);
@@ -80,6 +81,7 @@ app.get('/about', (req,res) => {
 
 app.use('/users', users);
 app.use('/ideas', ideas);
+app.use('/investor',investor);
 
 const port = process.env.PORT || 1000;
 app.listen(port, () =>{

@@ -62,7 +62,7 @@ router.post('/', ensureAuthenticated, (req,res) => {
         new Idea(newUser)
         .save()
         .then(idea => {
-            // req.flash('success_msg', 'Idea added');
+            req.flash('success_msg', 'Idea added');
             res.redirect('/ideas');
         })
     }
