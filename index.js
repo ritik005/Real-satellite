@@ -19,7 +19,6 @@ var investor = require('./routes/investor');
 
 // passport config
 require('./config/passport')(passport);
-require('./config/passport1')(passport);
 
 require('./models/User');
 const User = mongoose.model('users');

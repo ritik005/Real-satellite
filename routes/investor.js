@@ -16,7 +16,7 @@ router.get('/register1', (req,res) => {
 });
 
 router.post('/login1', (req, res, next) => {
-    passport.authenticate('local', {
+    passport.authenticate('investor-local', {
         successRedirect:'/sss',
         failureRedirect:'/investor/login1',
         failureFlash: true
@@ -26,9 +26,9 @@ router.post('/login1', (req, res, next) => {
 router.post('/register1', (req, res) =>{
     let errors =[];
 
-    // if(req.body.password!= req.body.password2){
-    //     errors.push({text:'Password do not match'});
-    // }
+    if(req.body.password!= req.body.password2){
+        errors.push({text:'Password do not match'});
+    }
     if(req.body.password.length <4){
         errors.push({text:'Password must be atleast 4 character'});
     }
