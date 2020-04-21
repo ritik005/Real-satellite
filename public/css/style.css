@@ -421,4 +421,20 @@ h2 {
 .button-collapse {
   text-decoration: none;
 }
+.card-body {
+  text-align: center;
+}
+.card {
+  margin-top: 40px;
+  box-shadow: black;
+  border-color: black;
+}
+h5 {
+  font-size: 30px;
+  font-weight: 700;
+  color: #413e66;
+}
+.ideas-text {
+  font-size: 20px;
+}
 

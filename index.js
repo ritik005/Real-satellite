@@ -80,6 +80,14 @@ app.get('/', (req,res) => {
 app.get('/about', (req,res) => {
     res.render('about');
 });
+app.get('/publicideas', (req,res) => {
+    Idea.find({status:'public'})
+        .then(ideas => {
+            res.render('publicideas',{
+                ideas: ideas
+            });
+        });
+});
 
 app.use('/users', users);
 app.use('/ideas', ideas);

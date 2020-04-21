@@ -1,0 +1,28 @@
+<header>
+    <%- include('layout/main'); %>
+</header>
+<body>
+    <div class="row">
+        <div class="container">
+        <% ideas.forEach(function(ideas){ %>
+            <div class="col-4">
+                <div class="card">
+                    <div>
+                        <a href="/ideas/edit/<%=ideas.id%>"> <button class="btn pmd-btn-fab pmd-ripple-effect btn-danger pmd-btn-raised" type="button"><i class="fa fa-pencil"></i></button> </a>
+                    </div>
+                    <div class="card-body">
+                        <h5><%= ideas.title %></h5>
+                        <hr>
+                        <p class="ideas-text"><%= ideas.details%></p>
+                    </div>
+                    <div class="card-action">
+                        <div class="text-center">
+                      <a href="/ideas/show/<%=ideas.id%>"><button type="button" class="btn btn-secondary float-center" href="/ideas/edit/<%= ideas.id%>" style="margin-bottom: 10px;">Read more</button></a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <% }) %>
+        </div>
+    </div>
+</body>

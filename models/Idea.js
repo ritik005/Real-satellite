@@ -11,6 +11,9 @@ const IdeaSchema = new Schema({
         type:String,
         required:true
     },
+    status: {
+        type:String,
+    },
     user:{
         type: String,
         required:true

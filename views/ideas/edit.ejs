@@ -44,18 +44,13 @@
                         <small id="emailHelp" class="form-text text-muted">Give a brief description about your idea around 50 to 100 words.</small>
                       </div>
                     <hr>
-                    <div class="form-check">
-                        <label class="form-check-label">
-                          <input type="radio" class="form-check-input" name="optradio"> <i class="fa fa-lock" aria-hidden="true"></i> <b> Private</b><br>
-                          <small>You choose who can see your project idea.</small>
-                        </label>
-                      </div>
-                      <div class="form-check">
-                          <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="optradio"><i class="fa fa-unlock" aria-hidden="true"></i> <b>  Public</b><br>
-                            <small>Anyone can see your project idea and also contribute openly.</small>
-                          </label>
-                        </div>
+                    <div class="input-field">
+                      <select name="status">
+                        <option value="public">Public</option>
+                        <option value="private">Private</option>
+                      </select>
+                      <label for="status"><b>Status</b></label>
+                    </div>
                         <hr>
                 <button type="submit" class="btn btn-dark mr-5">Add</button>
               </form>
