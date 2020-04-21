@@ -43,17 +43,26 @@
                 <button class="btn btn-outline-dark my-2 my-sm-2 link-unstyled" type="submit"><a href="/ideas/add" class="text-dark" style="text-decoration: none;">New</a></button>
                 </form>
                 <hr>
-                <% ideas.forEach(function(ideas){ %>
-                  <div class="card card-body mb-2" style="background-color: rgb(241, 247, 247);">
-                    <h4 class="sss"><%= ideas.title %></h4>
-                    <p style="color:black;font-weight: 400; font-size: 18px;"><%= ideas.details %></p>
-                    <a class="gta-btn btn-dark mb-2 " href="/ideas/edit/<%=ideas.id%>">Edit</a>
-                    <form method="post" action="/ideas/<%= ideas.id %>?_method=DELETE">
-                       <input type="hidden" name="_method" value="DELETE">
-                       <input type="submit" class="fta-btn btn-danger" value="Delete">
-                    </form>
-                  </div>
-                  <% }) %>
+                  <table>
+                      <tr>
+                        <th>Title</th>
+                        <th>Status</th>
+                        <th></th>
+                      </tr>
+                      <% ideas.forEach(function(ideas){ %>
+                      <tr>
+                        <td><a href="/ideas/show/<%=ideas.id%>" style="text-decoration: none;"><%= ideas.title%></a></td>
+                        <td><%= ideas.status%></td>
+                        <td><a href="/ideas/edit/<%=ideas.id%>" style="text-decoration: none;"> <button type="button" class="btn btn-info float-left mr-2" href="/ideas/edit/<%= ideas.id%>" style="width: 100%x;"><i class="fa fa-pencil"></i> Edit</button></a>
+                          <form method="post" action="/ideas/<%= ideas.id %>?_method=DELETE" id="delete-form">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="submit" class="btn btn-danger float-left" ><i class="fa fa-remove"></i> Delete</button>
+                         </form>
+                        </td>
+                      </tr>
+                      <% }) %>
+                  </table>
+                  
           </div>
         </div>
       </div>

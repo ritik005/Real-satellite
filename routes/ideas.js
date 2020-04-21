@@ -18,6 +18,9 @@ router.get('/', ensureAuthenticated, (req,res) => {
     });
     
 });
+router.get('/show/:id', (req, res) => {
+    res.render('ideas/show');
+})
 router.get('/add', ensureAuthenticated, (req, res) => {
     res.render('ideas/add');
 });
@@ -78,6 +81,7 @@ router.put('/:id', ensureAuthenticated, (req,res) =>{
         //new values
         idea.title = req.body.title;
         idea.details = req.body.details;
+        idea.status = req.body.status;
 
         idea.save()
             .then(idea => {
