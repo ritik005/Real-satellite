@@ -1,4 +1,17 @@
 <header>
     <%- include('../layout/main'); %>
 </header>
-<h1>Hii</h1>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-9">
+                <h3 style="font-size: 30px;font-weight: 700;color: #413e66; padding-top: 25px;"><%= ideas.title%></h3>
+                <div class="card">
+                    <div class="card-body" style="color: black; font-size: 18px; text-align: left; color:grey;">
+                      <p>  <%= ideas.details%> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

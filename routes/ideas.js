@@ -19,8 +19,15 @@ router.get('/', ensureAuthenticated, (req,res) => {
     
 });
 router.get('/show/:id', (req, res) => {
-    res.render('ideas/show');
-})
+    Idea.findOne({
+        _id: req.params.id
+    })
+    .then(ideas => {
+        res.render('ideas/show', {
+            ideas : ideas
+        });
+    });
+});
 router.get('/add', ensureAuthenticated, (req, res) => {
     res.render('ideas/add');
 });

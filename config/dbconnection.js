@@ -11,7 +11,7 @@ mongoose
   .connect(connectionString, {
     useNewUrlParser: true,
     useFindAndModify: false,
-    useCreateIndex: true
+    useCreateIndex: true,
   })
   .then(function() {
     console.log("MongoDB Connected");

@@ -437,6 +437,15 @@ h5 {
 .ideas-text {
   color:grey;
   font-size: 18px;
+  overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-height: 16px;    
+    max-height: 32px;     
+    -webkit-line-clamp: 1; /* Write the number of 
+                              lines you want to be 
+                              displayed */
+    -webkit-box-orient: vertical;
 }
 table {
   font-family: arial, sans-serif;
@@ -448,6 +457,7 @@ td, th {
   border: none;
   text-align: left;
   padding: 8px;
+  font-size: 20px;
 }
 tr:nth-child(even) {
   background-color: #dddddd;
@@ -455,3 +465,8 @@ tr:nth-child(even) {
 /* #delete-form {
   display:inline;
 } */
+h3 {
+  font-size: 30px;
+  font-weight: 600;
+  padding-top: 10px;
+}
