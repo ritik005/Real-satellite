@@ -9,6 +9,7 @@ const passport = require('passport');
 const mongoose = require('mongoose');
 
 
+
 require('./config/dbconnection');
 
 const app = express();
@@ -26,7 +27,6 @@ require('./models/Investor');
 const Investor = mongoose.model('investor');
 require('./models/Idea');
 const Idea = mongoose.model('ideas');
-
 
 app.set('view engine', 'ejs');
 
@@ -64,7 +64,6 @@ app.use(flash());
 app.use(function(req,res,next){
     res.locals.success_msg = req.flash('success_msg');
     res.locals.error_msg = req.flash('error_msg');
-    res.locals.error = req.flash('error');
     res.locals.user = req.user || null;
     next();
 });

@@ -24,23 +24,27 @@ router.post('/login', (req, res, next) => {
 });
 
 router.post('/register', (req, res) =>{
-    let errors =[];
-
-    if(req.body.password!= req.body.password2){
-        errors.push({text:'Password do not match'});
+    const {name, email, password, password2 } = req.body;
+    let errors = [];
+    if(!name || !email || !password || !password2){
+        errors.push({ msg: 'Please fill in all fields'});
     }
-    if(req.body.password.length <4){
-        errors.push({text:'Password must be atleast 4 character'});
+    if(password!=password2){
+        errors.push({msg: 'Please enter same password'});
     }
-    if(errors.length > 0){
-        res.render('/register', {
-            errors :errors,
-            name: req.body.name,
-            email: req.body.email,
-            password: req.body.password,
-            password2: req.body.password2
+    if(password<4){
+        errors.push({msg: 'Check the length of password'});
+    }
+    if(errors.length >0){
+        res.render('register',{
+            errors,
+            name,
+            email,
+            password,
+            password2
         });
-    } else {
+    }
+     else {
         User.findOne({email: req.body.email})
           .then(user => {
               if(user){
