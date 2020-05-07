@@ -27,16 +27,16 @@ router.post('/register', (req, res) =>{
     const {name, email, password, password2 } = req.body;
     let errors = [];
     if(!name || !email || !password || !password2){
-        errors.push({ msg: 'Please fill in all fields'});
+        errors.push({text: 'Please fill in all fields'});
     }
     if(password!=password2){
-        errors.push({msg: 'Please enter same password'});
+        errors.push({text: 'Please enter same password'});
     }
-    if(password<4){
-        errors.push({msg: 'Check the length of password'});
+    if(password.length<4){
+        errors.push({text: 'Check the length of password'});
     }
     if(errors.length >0){
-        res.render('register',{
+        res.render('users/register',{
             errors,
             name,
             email,
